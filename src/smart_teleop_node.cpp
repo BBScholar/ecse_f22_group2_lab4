@@ -30,7 +30,7 @@ int main(int argc, char **argv) {
   ros::Publisher cmd_vel_pub;
 
   des_vel_sub = nh.subscribe("des_vel", 32, des_vel_callback);
-  laser_sub = nh.subscribe("lidar_1", 32, laser_callback);
+  laser_sub = nh.subscribe("laser_1", 32, laser_callback);
 
   cmd_vel_pub = nh.advertise<geometry_msgs::Twist>("cmd_vel", 32);
   cmd_vel_pub_shared = &cmd_vel_pub;
