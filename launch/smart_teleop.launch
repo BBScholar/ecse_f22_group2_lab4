@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="use_namespace" default="true" />
+  <arg name="namespace" default="robot0" />
+
+  <node unless="$(arg use_namespace)" pkg="smart_teleop" type="smart_teleop_node" name="smart_teleop" />
+  <node if="$(arg use_namespace)" pkg="smart_teleop" type="smart_teleop_node" name="smart_teleop" ns="$(arg namespace)" />
+</launch>
+
