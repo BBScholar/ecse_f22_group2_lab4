@@ -2,12 +2,10 @@
 
 
 <launch>
-  <include file="$(find smart_teleop)/launch/smart_teleop.launch"></include>
-
   <include file="$(find stdr_launchers)/launch/server_with_map_and_gui.launch"></include>
 
+  <include file="$(find smart_teleop)/launch/smart_teleop.launch"></include>
   <node pkg="rqt_gui" type="rqt_gui" name="rqt_gui" args="--perspective-file $(find smart_teleop)/rqt_config/teleop.perspective" />
-
   <node pkg="stdr_robot" type="robot_handler" name="$(anon robot_spawn)" args="add $(find smart_teleop)/robots/robot.yaml 1 2 0" />
 
 </launch>
